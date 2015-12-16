@@ -7,11 +7,53 @@ body, html {
 }
 
 .board {
-  background:#E6E6E6;
+  background:#3b3ff3;
   height:100%;
   width:100%;
   text-align: center;
   padding-top:10px;
+}
+
+.board {
+  background: linear-gradient(53deg, #3b3ff3, #dfdfdf, #7d1711);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 21s ease infinite;
+  -moz-animation: AnimationName 21s ease infinite;
+  animation: AnimationName 21s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 31%
+  }
+  50% {
+    background-position: 100% 70%
+  }
+  100% {
+    background-position: 0% 31%
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 31%
+  }
+  50% {
+    background-position: 100% 70%
+  }
+  100% {
+    background-position: 0% 31%
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 31%
+  }
+  50% {
+    background-position: 100% 70%
+  }
+  100% {
+    background-position: 0% 31%
+  }
 }
 
 .board.hasActiveCard .card {
