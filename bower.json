@@ -1,0 +1,19 @@
+{
+  "name": "scrumkats",
+  "main": "scrumkats.js",
+  "authors": [
+    "gordon@k94n.com"
+  ],
+  "description": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

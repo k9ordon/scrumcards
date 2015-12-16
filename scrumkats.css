@@ -1,0 +1,91 @@
+body, html {
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.board {
+  background:#E6E6E6;
+  height:100%;
+  width:100%;
+  text-align: center;
+  padding-top:10px;
+}
+
+.board.hasActiveCard .card {
+  opacity:0;
+  pointer-events: none;
+}
+
+.board.hasActiveCard .card.active {
+  opacity:1;
+  pointer-events: all;
+}
+
+.card {
+  height:150px;
+  width:100px;
+  background:gray;
+  display:inline-block;
+  margin:10px;
+  position: relative;
+  box-shadow: 0 5px 10px -5px #8C8C8C;
+}
+
+.card .number {
+  display:block;
+  margin-top:35px;
+  font-size:60px;
+  color:#2B2B2B;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.card-front{
+  display: block;
+  background:white;
+}
+.card-back {
+  display: none;
+  background:#1A1F1A;
+}
+
+.card.active {
+  position: fixed;
+  top:10px;
+  left:50%;
+  margin-left:-160px;
+  width:320px;
+  height:440px;
+  box-shadow: 0 5px 40px -5px #000000;
+}
+
+.card.active .number {
+  margin-top:70px;
+  font-size:230px;
+}
+
+.card.active .card-front {
+  display:none;
+}
+.card.active .card-back {
+  display:block;
+}
+
+.card.active.flipped {
+}
+
+.card.active.flipped .card-front {
+  display:block;
+}
+.card.active.flipped .card-back {
+  display:none;
+}
