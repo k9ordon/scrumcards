@@ -1,0 +1,18 @@
+.board {
+    background: #3b3ff3;
+    min-height: 100%;
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.board {
+    background: linear-gradient(53deg, #3b3ff3, #dfdfdf, #7d1711);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 21s ease infinite;
+    -moz-animation: AnimationName 21s ease infinite;
+    animation: AnimationName 21s ease infinite;
+}
