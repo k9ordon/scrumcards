@@ -5,6 +5,11 @@ body, html {
     width: 100%;
     font-family: Impact, Charcoal, sans-serif;
 }
+
+* {
+    box-sizing: border-box;
+}
+
 @-webkit-keyframes AnimationName {
     0% {
         background-position: 0% 31%

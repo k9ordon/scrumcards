@@ -1,12 +1,13 @@
-.board.hasActiveCard .card {
+.board.hasActiveCard .boardCard {
     display: none;
     pointer-events: none;
 }
-.board.hasActiveCard .card.active {
+.board.hasActiveCard .boardCard.active {
     display: block;
     pointer-events: all;
 }
-.card {
+
+.boardCard {
     height: 120px;
     width: 90px;
     margin: 5px 10px;
@@ -18,7 +19,7 @@
     user-select: none;
     border-radius: 5px;
 }
-.card:hover:after {
+.boardCard:hover:after {
     border: 3px solid rgba(255,255,255,0.7);
     content: '';
     position: absolute;
@@ -28,7 +29,7 @@
     right: -7px;
     border-radius: 10px;
 }
-.card .number {
+.boardCard .number {
     display: block;
     margin-top: 25px;
     font-size: 55px;
@@ -37,7 +38,7 @@
     pointer-events: none;
     font-family: Impact, sans-serif;
 }
-.card-front, .card-back {
+.boardCard-front, .boardCard-back {
     position: absolute;
     top: 0;
     left: 0;
@@ -45,11 +46,12 @@
     bottom: 0;
     border-radius: 5px;
 }
-.card-front {
+
+.boardCard-front {
     display: block;
     background: white;
 }
-.card-back {
+.boardCard-back {
     display: none;
     background: #1A1F1A;
     background: linear-gradient(270deg, #000000, #f9ff00);
@@ -59,10 +61,7 @@
     animation: CardBackAnimationName 2s ease infinite;
 }
 
-
-
-
-.card.active {
+.boardCard.active {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -72,20 +71,20 @@
     height: 440px;
     box-shadow: 0 5px 40px -5px #000000;
 }
-.card.active .number {
+.boardCard.active .number {
     margin-top: 70px;
     font-size: 230px;
 }
-.card.active .card-front {
+.boardCard.active .boardCard-front {
     display: none;
 }
-.card.active .card-back {
+.boardCard.active .boardCard-back {
     display: block;
 }
-.card.active.flipped {}
-.card.active.flipped .card-front {
+.boardCard.active.flipped {}
+.boardCard.active.flipped .boardCard-front {
     display: block;
 }
-.card.active.flipped .card-back {
+.boardCard.active.flipped .boardCard-back {
     display: none;
 }
