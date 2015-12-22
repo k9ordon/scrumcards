@@ -4,13 +4,37 @@ if (Meteor.isClient) {
     Template.board.helpers({
         cards: cards,
         hasActiveCardClassName: function() {
-            return Session.get("current") ? "hasActiveCard" : ""
+            return Session.get("cardNumber") ? "hasActiveCard" : ""
+        },
+        title: function() {
+            return superheros[Session.get("userId")] + '@' + Session.get("boardSlug")
         }
     });
 
     Template.board.events({
         "click .board": function(e) {
-            return console.log("clicked board"), Session.set("current", !1), Session.set("flipped", !1), !1
+            console.log("clicked board");
+
+            Session.set("cardNumber", false);
+            Session.set("flipped", false);
+
+            Meteor.call("setCard",
+                Session.get('userId'),
+                Session.get('boardSlug'),
+                false
+            );
+        },
+        "click .boardUsers": function(e) {
+            console.log("clicked board");
+
+            Session.set("cardNumber", false);
+            Session.set("flipped", false);
+
+            Meteor.call("setCard",
+                Session.get('userId'),
+                Session.get('boardSlug'),
+                false
+            );
         }
     });
 }

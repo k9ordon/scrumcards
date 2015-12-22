@@ -1,24 +1,42 @@
-Router.route('/:boardSlug', function() {
-    console.log('boardSlug', this.params.boardSlug);
+Router.route('/', function() {
+    this.render('home');
+});
 
-    this.wait(Meteor.subscribe('board', this.params.boardSlug));
-    Meteor.call("enterBoard", this.params.boardSlug);
+Router.route('/:boardSlug', function() {
+    var boardSlug = this.params.boardSlug.toLowerCase();
+    
+    console.log('boardSlug', boardSlug);
+
+    Session.set('boardSlug', boardSlug);
+
+    this.wait([
+        Meteor.subscribe('board', boardSlug),
+        Meteor.subscribe('boardUsers', boardSlug)
+    ]);
+
+    Meteor.call("enterBoard", Session.get('userId'), boardSlug);
 
     var board = Boards.findOne({
-        slug: this.params.boardSlug
+        slug: boardSlug
     });
 
-    if (this.ready()) {
+    var before = new Date();
+    before.setMinutes(before.getMinutes() - 1);
 
-        this.render('board', {
-            data: {
-                board: board
-            }
-        });
+    var boardUsers = BoardUsers.find({
+        //userId: { $ne: Session.get('userId') },
+        boardSlug: boardSlug,
+        date: {
+            $gt: before
+        }
+    });
 
-    } else {
-        this.render('board');
-    }
+    this.render('board', {
+        data: {
+            board: board,
+            boardUsers: boardUsers
+        }
+    });
 });
 
 Router.route('/card', function() {

@@ -1,8 +1,25 @@
 <template name="board">
-    {{#if board}}
+    <div class="header">
+        {{ title }}
+    </div>
+
+    <!-- {{#if board}}
+        {{! board.slug}}
     {{else}}
-        connecting board ...
-    {{/if}}
+        <div class="connecting">
+            connecting board ...
+        </div>
+    {{/if}} -->
+
+    <div class="boardUsers">
+        {{#unless boardUsers}}
+            <div class="connecting">connecting users ...</div>
+        {{else}}
+            {{#each boardUsers}}
+                {{> boardUser}}
+            {{/each}}
+        {{/unless}}
+    </div>
 
     <div class="board {{ hasActiveCardClassName }}">
         {{#each cards}}

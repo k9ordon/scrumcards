@@ -7,7 +7,7 @@ if (Meteor.isClient) {
 
     var userId = Cookie.get('userId');//Session.get("userId");
     if(!userId) {
-        var random = superheros[Math.floor(Math.random()*superheros.length)];
+        var random = Math.floor(Math.random()*superheros.length);
         Cookie.set('userId', random);
         userId = Cookie.get('userId');
     }
@@ -18,3 +18,10 @@ if (Meteor.isClient) {
 Router.configure({
   layoutTemplate: 'layout'
 });
+
+
+BoardUsers.allow({
+  insert: function (userId, doc) {
+    return true;
+  }
+})

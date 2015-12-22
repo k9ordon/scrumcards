@@ -1,18 +1,37 @@
 if (Meteor.isClient) {
     Template.boardCard.helpers({
         activeClassName: function() {
-            return this.number === Session.get("current") ? "active" : ""
+            return this.number === Session.get("cardNumber") ? "active" : ""
         },
         flippedClassName: function() {
-            return this.number === Session.get("current") && Session.get("flipped") ? "flipped" : ""
+            return this.number === Session.get("cardNumber") && Session.get("flipped") ? "flipped" : "";
         }
     });
     Template.boardCard.events({
         "click .boardCard:not(.active)": function(e) {
-            return Session.set("current", this.number), Session.set("flipped", !1), !1
+            console.log("setCard", Session.get('userId'), Session.get('boardSlug'), Session.get("cardNumber"));
+
+            Session.set("cardNumber", this.number);
+            Session.set("flipped", false);
+
+            Meteor.call("setCard",
+                Session.get('userId'),
+                Session.get('boardSlug'),
+                -1
+            );
+            return false;
         },
         "click .boardCard.active": function(e) {
-            return Session.set("flipped", Session.get("flipped") ? !1 : !0), !1
+            Meteor.call("setCard",
+                Session.get('userId'),
+                Session.get('boardSlug'),
+                Session.get("flipped") ? -1 : this.number
+            );
+
+            Session.set("flipped",
+                Session.get("flipped") ? false : true
+            );
+            return false;
         }
     });
 }
