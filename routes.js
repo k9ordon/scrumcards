@@ -1,9 +1,24 @@
-Router.route('/:boardId', function() {
-    console.log('boardId', this.params.boardId);
+Router.route('/:boardSlug', function() {
+    console.log('boardSlug', this.params.boardSlug);
 
-    Meteor.call("enterBoard", this.params.boardId);
-    //this.set('boardId', this.params.boardId);
-    this.render('board');
+    this.wait(Meteor.subscribe('board', this.params.boardSlug));
+    Meteor.call("enterBoard", this.params.boardSlug);
+
+    var board = Boards.findOne({
+        slug: this.params.boardSlug
+    });
+
+    if (this.ready()) {
+
+        this.render('board', {
+            data: {
+                board: board
+            }
+        });
+
+    } else {
+        this.render('board');
+    }
 });
 
 Router.route('/card', function() {

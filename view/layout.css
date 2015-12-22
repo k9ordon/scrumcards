@@ -1,10 +1,19 @@
 .root {
     height: 100%;
     width: 100%;
-
     background: linear-gradient(53deg, #3b3ff3, #dfdfdf, #7d1711);
     background-size: 600% 600%;
+    
     -webkit-animation: AnimationName 21s ease infinite;
     -moz-animation: AnimationName 21s ease infinite;
     animation: AnimationName 21s ease infinite;
+}
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.45);
+    text-align: center;
+    padding: 6px;
 }

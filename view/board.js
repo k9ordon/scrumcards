@@ -1,4 +1,6 @@
 if (Meteor.isClient) {
+    Meteor.subscribe("boards");
+
     Template.board.helpers({
         cards: cards,
         hasActiveCardClassName: function() {
