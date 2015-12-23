@@ -9,6 +9,10 @@
     flex: auto;
     position: relative;
     padding:20px 0;
+
+    perspective: 1000px;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .boardUsers {
@@ -17,9 +21,12 @@
     justify-content: center;
     align-items: center;
     /*flex:auto;*/
-    max-height: 400px;
-    min-height: 120px;
+    height: 100px;
+    /*max-height: 400px;
+    min-height: 120px;*/
     /*overflow-x: scroll;*/
     padding:10px;
     flex-wrap: wrap;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }

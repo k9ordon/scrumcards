@@ -21,6 +21,7 @@ if (Meteor.isClient) {
             Meteor.call("setCard",
                 Session.get('userId'),
                 Session.get('boardSlug'),
+                false,
                 false
             );
         },
@@ -33,6 +34,7 @@ if (Meteor.isClient) {
             Meteor.call("setCard",
                 Session.get('userId'),
                 Session.get('boardSlug'),
+                false,
                 false
             );
         }

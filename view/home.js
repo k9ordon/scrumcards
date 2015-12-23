@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
     Template.home.helpers({
         userId: function() {
-            return Session.get("userId");
+            return superheros[Session.get("userId")]
         }
     });
     Template.home.events({

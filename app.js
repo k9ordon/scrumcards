@@ -6,7 +6,7 @@ if (Meteor.isClient) {
     Session.setDefault('flipped', false);
 
     var userId = Cookie.get('userId');//Session.get("userId");
-    if(!userId) {
+    if(!userId || !superheros[userId]) {
         var random = Math.floor(Math.random()*superheros.length);
         Cookie.set('userId', random);
         userId = Cookie.get('userId');

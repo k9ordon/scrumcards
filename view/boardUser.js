@@ -4,7 +4,7 @@ if (Meteor.isClient) {
             return this.cardNumber ? "active" : "";
         },
         flippedClassName: function() {
-            return (this.cardNumber && this.cardNumber != -1) ? "flipped" : "";
+            return this.flipped ? "flipped" : "";
         },
         userName: function(){
             return superheros[this.userId];

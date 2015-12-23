@@ -1,9 +1,11 @@
 if (Meteor.isClient) {
     Template.boardCard.helpers({
         activeClassName: function() {
+            console.debug('activeClassName', this.number);
             return this.number === Session.get("cardNumber") ? "active" : ""
         },
         flippedClassName: function() {
+            console.debug('flippedClassName', this.number);
             return this.number === Session.get("cardNumber") && Session.get("flipped") ? "flipped" : "";
         }
     });
@@ -17,7 +19,8 @@ if (Meteor.isClient) {
             Meteor.call("setCard",
                 Session.get('userId'),
                 Session.get('boardSlug'),
-                -1
+                this.number,
+                false
             );
             return false;
         },
@@ -25,7 +28,8 @@ if (Meteor.isClient) {
             Meteor.call("setCard",
                 Session.get('userId'),
                 Session.get('boardSlug'),
-                Session.get("flipped") ? -1 : this.number
+                this.number,
+                Session.get("flipped") ? false : true
             );
 
             Session.set("flipped",

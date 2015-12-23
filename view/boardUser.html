@@ -2,7 +2,9 @@
     <div class="boardUser {{ activeClassName }} {{ flippedClassName }}">
         <div class="boardUser-card">
             <div class="boardUser-cardFront">
+                {{#if flippedClassName }}
                 <span class="number">{{ cardNumber }}</span>
+                {{/if}}
             </div>
             <div class="boardUser-cardBack"></div>
         </div>
