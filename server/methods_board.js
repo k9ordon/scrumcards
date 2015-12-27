@@ -65,7 +65,7 @@ Meteor.methods({
             boardSlug: boardSlug
         });
     },
-    setCard: function(userId, boardSlug, cardNumber, flipped) {
+    setCard: function(userId, boardSlug, cardNumber, flipped, theme) {
         var boardUser = BoardUsers.findOne({
             boardSlug: boardSlug,
             userId: userId
@@ -75,7 +75,8 @@ Meteor.methods({
             $set: {
                 date: new Date(),
                 flipped: flipped,
-                cardNumber: cardNumber
+                cardNumber: cardNumber,
+                theme: theme
             }
         });
     }

@@ -8,6 +8,12 @@ if (Meteor.isClient) {
         },
         title: function() {
             return superheros[Session.get("userId")] + '@' + Session.get("boardSlug")
+        },
+        isCurrentTheme: function(theme) {
+            return Session.get('theme') == theme;
+        },
+        spectator: function() {
+            return Session.get('spectator');
         }
     });
 
@@ -22,21 +28,37 @@ if (Meteor.isClient) {
                 Session.get('userId'),
                 Session.get('boardSlug'),
                 false,
-                false
+                false,
+                Session.get("theme")
             );
         },
         "click .boardUsers": function(e) {
             console.log("clicked board");
 
-            Session.set("cardNumber", false);
-            Session.set("flipped", false);
 
-            Meteor.call("setCard",
-                Session.get('userId'),
-                Session.get('boardSlug'),
-                false,
-                false
-            );
+            if(Session.get("spectator")) {
+                Session.set("spectator", false)
+            }
+            else if(Session.get('cardNumber')) {
+                Session.set("cardNumber", false);
+                Session.set("flipped", false);
+
+                Meteor.call("setCard",
+                    Session.get('userId'),
+                    Session.get('boardSlug'),
+                    false,
+                    false,
+                    Session.get("theme")
+                );
+            } else {
+                Session.set("spectator", true);
+            }
+        },
+        "change .boardThemeSelect select": function(e) {
+            console.log('theme changed', e.target.value);
+
+            Session.set("theme", e.target.value);
+            Cookie.set("theme", e.target.value);
         }
     });
 }

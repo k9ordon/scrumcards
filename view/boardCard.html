@@ -1,6 +1,6 @@
 <template name="boardCard">
     {{boardId}}
-  <div class="boardCard {{ activeClassName }} {{ flippedClassName }}">
+  <div class="boardCard {{theme}} boardCard--big {{ activeClassName }} {{ flippedClassName }} boardCard-{{ id }}">
     {{ cardPosition }}
     <div class="boardCard-front">
         <span class="number">{{ number }}</span>

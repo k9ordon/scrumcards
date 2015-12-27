@@ -1,38 +1,74 @@
 .boardUser {
-    max-width: 60px;
+    min-width: 70px;
 
-    perspective: 1000px;
+    flex:auto;
+
+    perspective: 400px;
 }
 
+.boardUsers .boardCard {
+    margin:5px auto;
+}
 
-.boardUser-card {
-    height: 60px;
-    width: 60px;
-    margin: 0 -5px 5px 0;
-    position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border-radius: 60px;
-    text-align: center;
+.boardUsers .boardCard.idle {
     transform:scale(0.2);
     transition: transform 1s;
-    transform-style: preserve-3d;
+}
+.boardUsers .boardCard .boardCard-dot {
+    opacity:1;
+    background:#84FFB3;
+    border-radius: 60px;
+    height:60px;
 
+    position: absolute;
+    z-index:100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    transition: 0.6s;
+    transform-style: preserve-3d;
 }
-.boardUser-card .number {
-    display: block;
-    margin-top: 15px;
-    font-size: 25px;
-    color: #2B2B2B;
-    text-align: center;
-    pointer-events: none;
-    font-family: Impact, sans-serif;
+
+.boardUsers .boardCard.idle .boardCard-dot {
+    -webkit-animation: DotAnimation 2s linear infinite;
+    -moz-animation: DotAnimation 2s linear infinite;
+    animation: DotAnimation 2s linear infinite;
 }
-.boardUser.active .boardUser-card {
-    transform:scale(1);
-    transform: rotateY(180deg);
+
+
+.boardUsers .boardCard.flipped .boardCard-dot,
+.boardUsers .boardCard.active .boardCard-dot_ {
+    opacity:1;
+    border-radius: 6px;
+    background:#fff;
+    height: 100%;
+}
+
+.boardUsers .boardCard.active .boardCard-dot {
+    opacity:0;
+    /*background:blue;*/
+}
+
+.boardUsers .boardCard.idle .boardCard-front {
+    opacity:0;
+    /*background:green;*/
+}
+
+.boardUsers .boardCard.active .boardCard-front {
+    opacity: 0;
+}
+
+.boardUsers .boardCard.active.flipped .boardCard-front {
+    opacity: 1;
+}
+
+.boardUser .boardCard.active {
+    /*transform:scale(1);*/
 }
 
 .boardUser-user {
@@ -42,52 +78,29 @@
     white-space: nowrap;
     overflow: hidden;
     font-size: 11px;
-}
-.boardUser-cardFront, .boardUser-cardBack {
-    position: absolute;
-    top:0;left:0;right:0;bottom:0;
-    border-radius: 90px;
-
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transition: 0.6s;
-    transform-style: preserve-3d;
-
-    box-shadow: 0 5px 10px -5px #8C8C8C;
+    color:#84FFB3;
+    text-shadow:0 1px 3px #8C8C8C;
 }
 
-.boardUser-cardFront {
-    background: #fff;
-
-    /*display:none;*/
-    transform: rotateY(0);
-    z-index: 2;
+/*
+.boardUser:nth-child(0) .boardUser-card {
+    transform: rotateZ(5deg);
 }
-
-.boardUser-cardBack {
-    background: white;
-    /*display:block;*/
-    transform: rotateY(180deg);
+.boardUser:nth-child(1) .boardUser-card {
+    transform: rotateZ(2deg);
 }
-
-.boardUser.active .boardUser-cardBack {
-    background: #1A1F1A;
-    background: linear-gradient(270deg, #000000, #f9ff00);
-    background-size: 400% 400%;
-    -webkit-animation: CardBackAnimationName 2s ease infinite;
-    -moz-animation: CardBackAnimationName 2s ease infinite;
-    animation: CardBackAnimationName 2s ease infinite;
+.boardUser:nth-child(2) .boardUser-card {
+    transform: rotateZ(7deg);
 }
-
-.boardUser.flipped.active .boardUser-card{
-    transform: rotateY(0);
+.boardUser:nth-child(3) .boardUser-card {
+    transform: rotateZ(-5deg);
 }
-
-.boardUser.flipped.active .boardUser-cardFront {
-    /*display: block;*/
-    /*transform: rotateY(0);*/
+.boardUser:nth-child(4) .boardUser-card {
+    transform: rotateZ(7deg);
 }
-.boardUser.flipped.active .boardUser-cardBack {
-    /*display: none;*/
-    /*transform: rotateY(-180deg);*/
+.boardUser:nth-child(5) .boardUser-card {
+    transform: rotateZ(-4deg);
 }
+.boardUser:nth-child(6) .boardUser-card {
+    transform: rotateZ(-5deg);
+}*/

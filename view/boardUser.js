@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
     Template.boardUser.helpers({
         activeClassName: function() {
-            return this.cardNumber ? "active" : "";
+            return this.cardNumber ? "active" : "idle";
         },
         flippedClassName: function() {
             return this.flipped ? "flipped" : "";
@@ -9,6 +9,12 @@ if (Meteor.isClient) {
         userName: function(){
             return superheros[this.userId];
         },
+        cardId: function() {
+            for(var i=0; i < cards.length; i++) {
+                if(cards[i].number == this.cardNumber) return cards[i].id;
+            }
+            return false;
+        }
         // userImageSrc: function() {
         //     return superheros[this.userId].thumbnail.path + '.' + superheros[this.userId].thumbnail.extension;
         // }

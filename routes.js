@@ -4,7 +4,7 @@ Router.route('/', function() {
 
 Router.route('/:boardSlug', function() {
     var boardSlug = this.params.boardSlug.toLowerCase();
-    
+
     console.log('boardSlug', boardSlug);
 
     Session.set('boardSlug', boardSlug);

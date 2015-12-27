@@ -13,6 +13,14 @@ if (Meteor.isClient) {
     }
     Session.set("userId", userId);
 
+
+    var theme = Cookie.get('theme');
+    if(!theme) {
+        Cookie.set('theme', 'theme1');
+        theme = Cookie.get('theme');
+    }
+    Session.set("theme", theme);
+
 }
 
 Router.configure({

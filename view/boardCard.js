@@ -1,12 +1,15 @@
 if (Meteor.isClient) {
     Template.boardCard.helpers({
         activeClassName: function() {
-            console.debug('activeClassName', this.number);
+            // console.debug('activeClassName', this.number);
             return this.number === Session.get("cardNumber") ? "active" : ""
         },
         flippedClassName: function() {
-            console.debug('flippedClassName', this.number);
+            // console.debug('flippedClassName', this.number);
             return this.number === Session.get("cardNumber") && Session.get("flipped") ? "flipped" : "";
+        },
+        theme: function() {
+            return Session.get('theme');
         }
     });
     Template.boardCard.events({
@@ -20,7 +23,8 @@ if (Meteor.isClient) {
                 Session.get('userId'),
                 Session.get('boardSlug'),
                 this.number,
-                false
+                false,
+                Session.get("theme")
             );
             return false;
         },
@@ -29,7 +33,8 @@ if (Meteor.isClient) {
                 Session.get('userId'),
                 Session.get('boardSlug'),
                 this.number,
-                Session.get("flipped") ? false : true
+                Session.get("flipped") ? false : true,
+                Session.get("theme")
             );
 
             Session.set("flipped",

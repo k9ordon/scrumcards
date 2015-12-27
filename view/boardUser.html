@@ -1,13 +1,17 @@
 <template name="boardUser">
-    <div class="boardUser {{ activeClassName }} {{ flippedClassName }}">
-        <div class="boardUser-card">
-            <div class="boardUser-cardFront">
+    <div class="boardUser">
+        <div class="boardCard {{ theme }} boardCard--small boardCard-{{ cardId }} {{activeClassName}} {{flippedClassName}}">
+
+            <div class="boardCard-dot"></div>
+            <div class="boardCard-front">
                 {{#if flippedClassName }}
-                <span class="number">{{ cardNumber }}</span>
+                    <span class="number">{{ cardNumber }}</span>
                 {{/if}}
             </div>
-            <div class="boardUser-cardBack"></div>
+            <div class="boardCard-back"></div>
+
         </div>
+
         <div class="boardUser-user">{{ userName }}</div>
     </div>
 </template>

@@ -1,0 +1,64 @@
+.theme2.boardCard .boardCard-front,
+.theme2.boardCard .boardCard-back {
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.theme2.boardCard .number {
+    font-family: Impact, sans-serif;
+}
+
+.theme2.boardCard .boardCard-front .number {
+    display: none;
+}
+.theme2.boardCard .boardCard-back {
+    background-image: url("/bower_components/Scrum-poker-cards/png/Cover - option 2.png");
+}
+
+.theme2.boardCard-0 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Eat a brownie.png");
+}
+.theme2.boardCard-0 .boardCard-front .number {
+    display: block;
+}
+.theme2.boardCard-05 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Coffee break.png");
+}
+.theme2.boardCard-05 .boardCard-front .number {
+    display: block;
+}
+.theme2.boardCard-1 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Low hanging fruit.png");
+}
+.theme2.boardCard-2 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Piece of cake.png");
+}
+.theme2.boardCard-3 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_It ain't rocket science.png");
+}
+.theme2.boardCard-5 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker-03.png");
+}
+.theme2.boardCard-8 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_An arm and a leg.png");
+}
+.theme2.boardCard-13 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Squeaking by.png");
+}
+.theme2.boardCard-20 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Don't put all .png");
+}
+.theme2.boardCard-40 .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Meterse en un berenjenal.png");
+}
+.theme2.boardCard-wat .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_Yak Shaving.png");
+}
+.theme2.boardCard-wat .boardCard-front .number {
+    display: block;
+}
+.theme2.boardCard-endless .boardCard-front {
+    background-image: url("/bower_components/Scrum-poker-cards/png/planning poker_When pigs fly.png");
+}
