@@ -14,6 +14,9 @@ if (Meteor.isClient) {
                 if(cards[i].number == this.cardNumber) return cards[i].id;
             }
             return false;
+        },
+        isCurrentUserClassName: function() {
+            return Session.get('userId') === this.userId ? 'isCurrentUser': '';
         }
         // userImageSrc: function() {
         //     return superheros[this.userId].thumbnail.path + '.' + superheros[this.userId].thumbnail.extension;

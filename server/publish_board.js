@@ -7,8 +7,16 @@ if (Meteor.isServer) {
 
     if (Meteor.isServer) {
         Meteor.publish('boardUsers', function(boardSlug) {
+
+            var before = new Date();
+            before.setSeconds(before.getSeconds() - 30);
+
             return BoardUsers.find({
-                boardSlug: boardSlug
+                //userId: { $ne: Session.get('userId') },
+                boardSlug: boardSlug,
+                date: {
+                    $gt: before
+                }
             });
         });
     }

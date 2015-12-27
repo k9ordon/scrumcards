@@ -5,7 +5,7 @@ Router.route('/', function() {
 Router.route('/:boardSlug', function() {
     var boardSlug = this.params.boardSlug.toLowerCase();
 
-    console.log('boardSlug', boardSlug);
+    // console.log('boardSlug', boardSlug);
 
     Session.set('boardSlug', boardSlug);
 
@@ -14,14 +14,21 @@ Router.route('/:boardSlug', function() {
         Meteor.subscribe('boardUsers', boardSlug)
     ]);
 
-    Meteor.call("enterBoard", Session.get('userId'), boardSlug);
+    if (this.ready()) {
+        Meteor.call("enterBoard", Session.get('userId'), boardSlug, Session.get('theme'));
+        Meteor.setInterval(function() {
+            Meteor.call("heartbeat", Session.get('userId'), boardSlug);
+        }, (30*1000));
+    }else {
+        console.log('not ready', boardSlug);
+    }
 
     var board = Boards.findOne({
         slug: boardSlug
     });
 
     var before = new Date();
-    before.setMinutes(before.getMinutes() - 1);
+    before.setSeconds(before.getSeconds() - 30);
 
     var boardUsers = BoardUsers.find({
         //userId: { $ne: Session.get('userId') },

@@ -6,8 +6,13 @@
     background-position: center center;
 }
 
+.theme2.boardCard .boardCard-dot {
+    background: #84FFB3;
+}
+
 .theme2.boardCard .number {
-    font-family: Impact, sans-serif;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    font-weight: 100;
 }
 
 .theme2.boardCard .boardCard-front .number {

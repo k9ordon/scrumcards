@@ -1,8 +1,5 @@
 <template name="board">
 
-    <div class="header">
-        {{ title }}
-    </div>
 
     <!-- {{#if board}}
         {{! board.slug}}
@@ -11,6 +8,10 @@
             connecting board ...
         </div>
     {{/if}} -->
+
+    <div class="header">
+        {{ title }}
+    </div>
 
     <div class="boardUsers theme2 {{#if spectator}}boardUsers-full{{/if}}">
         {{#unless boardUsers}}
@@ -22,20 +23,21 @@
         {{/unless}}
     </div>
 
-
     {{#unless spectator}}
-    <div class="board theme2 {{ hasActiveCardClassName }}">
-        {{#each cards}}
-            {{> boardCard}}
-        {{/each}}
-    </div>
+        <div class="board theme2 {{ hasActiveCardClassName }}">
+            {{#each cards}}
+                {{> boardCard}}
+            {{/each}}
+        </div>
 
-    <div class="boardThemeSelect">
-        <select name="boardTheme">
-            <option value="theme1" selected="{{isCurrentTheme "theme1"}}">Theme 1</option>
-            <option value="theme2" selected="{{isCurrentTheme "theme2"}}">Theme 2</option>
-        </select>
-    </div>
+        <div class="boardThemeSelect">
+            <select name="boardTheme">
+                <option value="theme1" selected="{{isCurrentTheme "theme1"}}">Default Theme</option>
+                <option value="theme2" selected="{{isCurrentTheme "theme2"}}">Redbooth Scrum poker cards</option>
+                <option value="theme3" selected="{{isCurrentTheme "theme3"}}">Ninja Theme</option>
+                <option value="theme4" selected="{{isCurrentTheme "theme4"}}">Batman Theme</option>
+            </select>
+        </div>
     {{/unless}}
 
 </template>

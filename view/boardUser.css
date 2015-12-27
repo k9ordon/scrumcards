@@ -14,9 +14,9 @@
     transform:scale(0.2);
     transition: transform 1s;
 }
-.boardUsers .boardCard .boardCard-dot {
+.boardCard .boardCard-dot {
     opacity:1;
-    background:#84FFB3;
+    background:transparent;
     border-radius: 60px;
     height:60px;
 
@@ -34,22 +34,22 @@
     transform-style: preserve-3d;
 }
 
-.boardUsers .boardCard.idle .boardCard-dot {
+.boardCard.idle .boardCard-dot {
     -webkit-animation: DotAnimation 2s linear infinite;
     -moz-animation: DotAnimation 2s linear infinite;
     animation: DotAnimation 2s linear infinite;
 }
 
 
-.boardUsers .boardCard.flipped .boardCard-dot,
-.boardUsers .boardCard.active .boardCard-dot_ {
+.boardCard.flipped .boardCard-dot,
+.boardCard.active .boardCard-dot_ {
     opacity:1;
     border-radius: 6px;
     background:#fff;
     height: 100%;
 }
 
-.boardUsers .boardCard.active .boardCard-dot {
+.boardCard.active .boardCard-dot {
     opacity:0;
     /*background:blue;*/
 }
@@ -75,11 +75,16 @@
     text-align:center;
     width:100%;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     overflow: hidden;
     font-size: 11px;
-    color:#84FFB3;
-    text-shadow:0 1px 3px #8C8C8C;
+    height: 28px;
+    /*color:#84FFB3;*/
+    /*text-shadow:0 1px 3px #8C8C8C;*/
+}
+
+.boardUser-user.isCurrentUser {
+    color:#929292;
 }
 
 /*

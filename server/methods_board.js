@@ -1,5 +1,15 @@
 Meteor.methods({
-    enterBoard: function(userId, boardSlug) {
+    heartbeat: function(userId, boardSlug) {
+        BoardUsers.update({
+            boardSlug: boardSlug,
+            userId: userId
+        }, {
+            $set: {
+                date: new Date()
+            }
+        });
+    },
+    enterBoard: function(userId, boardSlug, theme) {
         //console.log('enterBoard', userId, boardSlug);
         if (!boardSlug) throw new Meteor.Error("missing-params");
 
@@ -43,7 +53,8 @@ Meteor.methods({
                 userId: userId,
                 date: new Date(),
                 boardSlug: boardSlug,
-                cardNumber: false
+                cardNumber: false,
+                theme: theme
             });
             var boardUser = BoardUsers.findOne({
                 boardSlug: boardSlug,
@@ -54,7 +65,8 @@ Meteor.methods({
             BoardUsers.update(boardUser._id, {
                 $set: {
                     date: new Date(),
-                    cardNumber: false
+                    cardNumber: false,
+                    theme: theme
                 }
             });
         }

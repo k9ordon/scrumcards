@@ -6,6 +6,8 @@ body, html {
 
     /*font-family: Impact, Charcoal, sans-serif;*/
     font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+
+    overflow: hidden;
 }
 
 * {

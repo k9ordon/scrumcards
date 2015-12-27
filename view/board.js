@@ -37,7 +37,13 @@ if (Meteor.isClient) {
 
 
             if(Session.get("spectator")) {
-                Session.set("spectator", false)
+                Session.set("spectator", false);
+
+                Meteor.call("enterBoard",
+                    Session.get('userId'),
+                    Session.get('boardSlug'),
+                    Session.get('theme')
+                );
             }
             else if(Session.get('cardNumber')) {
                 Session.set("cardNumber", false);
@@ -52,6 +58,11 @@ if (Meteor.isClient) {
                 );
             } else {
                 Session.set("spectator", true);
+
+                Meteor.call("leaveBoard",
+                    Session.get('userId'),
+                    Session.get('boardSlug')
+                );
             }
         },
         "change .boardThemeSelect select": function(e) {

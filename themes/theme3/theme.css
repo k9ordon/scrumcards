@@ -1,0 +1,23 @@
+.theme3.boardCard .boardCard-front {
+    background: #362C2F;
+}
+
+.theme3.boardCard .number {
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    font-weight: 900;
+    color:#E23C49;
+
+    border-top:4px solid #E23C49;
+}
+
+.theme3.boardCard .boardCard-back {
+    background: #362C2F;
+    /*border-top:4px solid #E23C49;*/
+    /*border-bottom:4px solid #BECC97;*/
+}
+
+.theme3.boardCard .boardCard-dot {
+    background: #362C2F;
+    /*border-top:4px solid #E23C49;*/
+    /*border-bottom:4px solid #BECC97;*/
+}
