@@ -15,5 +15,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "Scrum-poker-cards": "https://github.com/redbooth/Scrum-poker-cards.git"
+  }
 }
