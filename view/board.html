@@ -9,10 +9,6 @@
         </div>
     {{/if}} -->
 
-    <div class="header">
-        {{ title }}
-    </div>
-
     <div class="boardUsers theme2 {{#if spectator}}boardUsers-full{{/if}}">
         {{#unless boardUsers}}
             <div class="connecting">connecting users ...</div>
@@ -21,6 +17,10 @@
                 {{> boardUser}}
             {{/each}}
         {{/unless}}
+    </div>
+
+    <div class="header">
+        {{ title }}
     </div>
 
     {{#unless spectator}}

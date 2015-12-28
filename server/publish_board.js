@@ -5,20 +5,18 @@ if (Meteor.isServer) {
         });
     });
 
-    if (Meteor.isServer) {
-        Meteor.publish('boardUsers', function(boardSlug) {
+    Meteor.publish('boardUsers', function(boardSlug) {
 
-            var before = new Date();
-            before.setSeconds(before.getSeconds() - 30);
+        var before = new Date();
+        before.setSeconds(before.getSeconds() - 30);
 
-            return BoardUsers.find({
-                //userId: { $ne: Session.get('userId') },
-                boardSlug: boardSlug,
-                date: {
-                    $gt: before
-                }
-            });
+        return BoardUsers.find({
+            //userId: { $ne: Session.get('userId') },
+            boardSlug: boardSlug,
+            date: {
+                $gt: before
+            }
         });
-    }
+    });
 
 }

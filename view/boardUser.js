@@ -1,12 +1,15 @@
 if (Meteor.isClient) {
     Template.boardUser.helpers({
         activeClassName: function() {
+            console.debug('activeClassName', this.cardNumber);
             return this.cardNumber ? "active" : "idle";
         },
         flippedClassName: function() {
+            console.debug('flippedClassName', this.flipped);
             return this.flipped ? "flipped" : "";
         },
         userName: function(){
+            console.debug('userName', this.userId);
             return superheros[this.userId];
         },
         cardId: function() {
@@ -17,6 +20,12 @@ if (Meteor.isClient) {
         },
         isCurrentUserClassName: function() {
             return Session.get('userId') === this.userId ? 'isCurrentUser': '';
+        },
+        isOnline: function() {
+            var before = new Date();
+            before.setSeconds(before.getSeconds() - 30);
+
+            return this.date > before;
         }
         // userImageSrc: function() {
         //     return superheros[this.userId].thumbnail.path + '.' + superheros[this.userId].thumbnail.extension;

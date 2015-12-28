@@ -3,6 +3,25 @@ if (Meteor.isClient) {
 
     Template.board.helpers({
         cards: cards,
+        boardUsers : function() {
+            var before = new Date();
+            before.setSeconds(before.getSeconds() - 30);
+
+            console.log('boardUseres', before);
+            return BoardUsers.find({
+                // userId: { $ne: Session.get('userId') },
+                boardSlug: this.boardSlug,
+                // date: {
+                //     $gt: before
+                // }
+            }
+            // , {
+            //     sort: {
+            //         cardDate: -1
+            //     }
+            // }
+            );
+        },
         hasActiveCardClassName: function() {
             return Session.get("cardNumber") ? "hasActiveCard" : ""
         },
@@ -33,7 +52,7 @@ if (Meteor.isClient) {
             );
         },
         "click .boardUsers": function(e) {
-            console.log("clicked board");
+            console.log("clicked boardUsers");
 
 
             if(Session.get("spectator")) {

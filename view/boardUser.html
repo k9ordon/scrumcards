@@ -1,5 +1,5 @@
 <template name="boardUser">
-    <div class="boardUser">
+    <div class="boardUser {{#if isOnline}}online{{/if}}">
         <div class="boardCard {{ theme }} boardCard--small boardCard-{{ cardId }} {{activeClassName}} {{flippedClassName}}">
 
             <div class="boardCard-dot"></div>

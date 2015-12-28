@@ -55,8 +55,14 @@
 }
 
 .boardUsers .boardCard.idle .boardCard-front {
-    opacity:0;
+    /*opacity:0;*/
     /*background:green;*/
+    display: none;
+}
+
+.boardUsers .boardCard.idle .boardCard-back {
+    /*opacity:0;*/
+    display: none;
 }
 
 .boardUsers .boardCard.active .boardCard-front {
