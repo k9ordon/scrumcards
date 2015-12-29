@@ -9,6 +9,10 @@
         </div>
     {{/if}} -->
 
+    <div class="header">
+        {{ title }}
+    </div>
+
     <div class="boardUsers theme2 {{#if spectator}}boardUsers-full{{/if}}">
         {{#unless boardUsers}}
             <div class="connecting">connecting users ...</div>
@@ -17,10 +21,6 @@
                 {{> boardUser}}
             {{/each}}
         {{/unless}}
-    </div>
-
-    <div class="header">
-        {{ title }}
     </div>
 
     {{#unless spectator}}
@@ -35,7 +35,7 @@
                 <option value="theme1" selected="{{isCurrentTheme "theme1"}}">Default Theme</option>
                 <option value="theme2" selected="{{isCurrentTheme "theme2"}}">Redbooth Scrum poker cards</option>
                 <option value="theme3" selected="{{isCurrentTheme "theme3"}}">Ninja Theme</option>
-                <option value="theme4" selected="{{isCurrentTheme "theme4"}}">Batman Theme</option>
+                <!-- <option value="theme4" selected="{{isCurrentTheme "theme4"}}">Batman Theme</option> -->
             </select>
         </div>
     {{/unless}}

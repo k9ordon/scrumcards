@@ -8,6 +8,7 @@ body, html {
     font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 
     overflow: hidden;
+    background: #F3F3F3;
 }
 
 * {
@@ -128,22 +129,22 @@ body, html {
 @keyframes DotAnimation {
     0% {
         transform: translate3d(0px,0px,0) rotate(0);
-        padding-top:120px;
+        /*padding-top:120px;*/
     }
     25% {
         transform: translate3d(0px,-120px,0) rotate(0);
-        padding-top:0;
+        /*padding-top:0;*/
     }
     50% {
         transform: translate3d(0px,0,0) rotate(0);
-        padding-top:120px;
+        /*padding-top:120px;*/
     }
     75% {
         transform: translate3d(0px,120px,0) rotate(0);
-        padding-top:0;
+        /*padding-top:0;*/
     }
     100% {
         transform: translate3d(0px,0,0) rotate(0);
-        padding-top:120px;
+        /*padding-top:120px;*/
     }
 }

@@ -1,7 +1,7 @@
 .root {
     height: 100%;
     width: 100%;
-    background: #F3F3F3;
+    /*background: #F3F3F3;*/
     /*background: linear-gradient(53deg, #3b3ff3, #dfdfdf, #7d1711);
     background-size: 600% 600%;
 
@@ -11,6 +11,7 @@
     /*padding: 30px 0 10px 0;*/
     display: flex;
     flex-direction: column;
+
     position: fixed;
     top:0;
     left:0;
@@ -24,9 +25,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid #EAEAEA;
-    border-bottom: 1px solid #EAEAEA;
+    /*border-top: 1px solid #EAEAEA;*/
+    border-bottom: 1px solid #F3F3F3;
     font-size: 12px;
     color: #404040;
     background: #FBFBFB;
+}
+
+.root.platform-cordova .header {
+  height: 60px;
+  min-height: 60px;
+  padding-top:20px;
+  /*background:red;*/
 }

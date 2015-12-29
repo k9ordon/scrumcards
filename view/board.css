@@ -15,6 +15,7 @@
     /*background: #FBFBFB;*/
     border-bottom: 1px solid #EAEAEA;
     /*background: #F3F3F3;*/
+    -webkit-transition: 0.6s;
     transition: 0.6s;
 }
 .boardUsers {
@@ -34,14 +35,17 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     background: #FBFBFB;
     padding:10px;
-    /*border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid #EAEAEA;
 
+    /*
     background: linear-gradient(53deg, #3b3ff3, #dfdfdf, #7d1711);
     background-size: 600% 600%;
 
     -webkit-animation: AnimationName 21s ease infinite;
     -moz-animation: AnimationName 21s ease infinite;
     animation: AnimationName 21s ease infinite;*/
+
+    -webkit-transition: 0.6s;
     transition: 0.6s;
 }
 .boardUsers-full {
