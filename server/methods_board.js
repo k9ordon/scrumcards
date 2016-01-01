@@ -1,5 +1,8 @@
 Meteor.methods({
     heartbeat: function(userId, boardSlug) {
+
+        // console.log('heartbeat', userId, boardSlug);
+
         if(Meteor.isServer) {
             BoardUsers.update({
                 boardSlug: boardSlug,
@@ -14,7 +17,7 @@ Meteor.methods({
 
         // remove older user sessions
         var before = new Date();
-        before.setMinutes(before.getMinutes() - 30);
+        before.setSeconds(before.getSeconds() - 30);
         BoardUsers.remove({
             date: {
                 $lt: before
@@ -22,7 +25,7 @@ Meteor.methods({
         });
     },
     enterBoard: function(userId, boardSlug, theme) {
-        console.log('enterBoard', userId, boardSlug, theme);
+        // console.log('enterBoard', userId, boardSlug, theme);
         if (!boardSlug) throw new Meteor.Error("missing-params");
 
         // search for board

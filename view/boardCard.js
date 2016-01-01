@@ -1,11 +1,11 @@
 if (Meteor.isClient) {
     Template.boardCard.helpers({
         activeClassName: function() {
-            console.debug('activeClassName', this.number);
+            // console.debug('activeClassName', this.number);
             return this.number === Session.get("cardNumber") ? "active" : ""
         },
         flippedClassName: function() {
-            console.debug('flippedClassName', this.number);
+            // console.debug('flippedClassName', this.number);
             return this.number === Session.get("cardNumber") && Session.get("flipped") ? "flipped" : "";
         },
         theme: function() {

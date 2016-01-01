@@ -7,7 +7,7 @@ if (Meteor.isClient) {
             var before = new Date();
             before.setSeconds(before.getSeconds() - 30);
 
-            console.log('boardUseres', before);
+            // console.log('boardUseres', before);
             return BoardUsers.find({
                 // userId: { $ne: Session.get('userId') },
                 boardSlug: this.boardSlug,
@@ -38,7 +38,7 @@ if (Meteor.isClient) {
 
     Template.board.events({
         "click .board": function(e) {
-            console.log("clicked board");
+            // console.log("clicked board");
 
             Session.set("cardNumber", false);
             Session.set("flipped", false);
@@ -52,7 +52,7 @@ if (Meteor.isClient) {
             );
         },
         "click .boardUsers": function(e) {
-            console.log("clicked boardUsers");
+            // console.log("clicked boardUsers");
 
 
             if(Session.get("spectator")) {
@@ -85,7 +85,7 @@ if (Meteor.isClient) {
             }
         },
         "change .boardThemeSelect select": function(e) {
-            console.log('theme changed', e.target.value);
+            // console.log('theme changed', e.target.value);
 
             Session.set("theme", e.target.value);
             Cookie.set("theme", e.target.value);
