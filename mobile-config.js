@@ -10,7 +10,7 @@ App.info({
 });
 
 
-App.setPreference('BackgroundColor', '0xffffffff');
+App.setPreference('BackgroundColor', '0xffFBFBFB');
 App.setPreference('HideKeyboardFormAccessoryBar', true);
 App.setPreference('Orientation', 'default');
 App.setPreference('Orientation', 'all', 'ios');

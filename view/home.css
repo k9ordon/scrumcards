@@ -10,4 +10,34 @@
 
     flex: auto;
     text-align: center;
+    padding:10px;
+}
+
+.home-input {
+  border:0;
+  background: #F3F3F3;
+  border: 1px solid #EAEAEA;
+  color:#000;
+  font-size:18px;
+  padding:15px;
+  width:100%;
+  max-width: 400px;
+  margin:0 auto;
+  text-align: center;
+  outline:0;
+  margin:0 0 15px;
+  -webkit-appearance:none;
+  appearance:none;
+}
+
+.home-button {
+  border:0;
+  background:#404040;
+  color:#fff;
+  font-size:12px;
+  padding:15px;
+  /*width:100%;*/
+  max-width: 400px;
+  margin:0 auto;
+  text-transform: uppercase;
 }
